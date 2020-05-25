@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    次の項目に回答してください (質問紙形式)
+
+{% endblock %}
+
+{% block content %}
+    次の情報を入力してください。
+    
+    多分スライダーとかも準備できるので、SVO等も聞けます。
+    デフォルトであるのは以下の3パターンです。
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

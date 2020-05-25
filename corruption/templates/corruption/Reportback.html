@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
+{% endblock %}
+
+{% block content %}
+<p>
+    You are Participant B.
+    Participant A reported that the result was {{group.diceroll_A}}.
+    Now your diceroll is below.
+</p>
+
+<img src="{% static image_pathB %}" width="500"/>
+
+<p>
+    What was the result of the dice roll? (A will know your report)
+</p>
+
+    {% formfield group.diceroll_B label="Please enter the result (1 to 6) :" %}
+    <p>{% next_button %}</p>
+    {% include Constants.instructions_template %}
+
+{% endblock %}
