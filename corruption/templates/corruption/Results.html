@@ -2,32 +2,29 @@
 {% load otree %}
 
 
-{% block title %}
-    Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
-{% endblock %}
-
 {% block content %}
 
     {% if group.diceroll_A == group.diceroll_B %}
         <p>
-            Participant A reports {{ group.diceroll_A }}.
-            Participant A reports {{ group.diceroll_B }}.
+            役割Aの参加者の出目は {{ group.diceroll_A }} でした。
+            役割Bの参加者の出目は {{ group.diceroll_B }} でした。
         </p>
         <p>
-            Dicerolls matched!
+            同じ出目が報告されました。この回が選択された場合は、
+            {{ group.diceroll_A }} × 100円がお二人それぞれに報酬として支払われます。
         </p>
     {% else %}
         <p>
-            Participant A reports {{ group.diceroll_A }}.
-            Participant A reports {{ group.diceroll_B }}.
+            役割Aの参加者の出目は {{ group.diceroll_A }} でした。
+            役割Bの参加者の出目は {{ group.diceroll_B }} でした。
         </p>
         <p>
-            Dicerolls didn't mach!
+            異なる出目が報告されました。この回が選択された場合は、
+            追加報酬は支払われません。
         </p>
         .
     {% endif %}
-    <p>{% next_button %}</p>
+    <button class="otree-btn-next btn btn-primary">次へ</button>
 
-    {% include Constants.instructions_template %}
 
 {% endblock %}

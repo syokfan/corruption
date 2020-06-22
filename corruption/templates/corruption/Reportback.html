@@ -1,9 +1,7 @@
 {% extends "global/Page.html" %}
 {% load otree %}
 
-{% block title %}
-    Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
-{% endblock %}
+
 
 {% block content %}
 <p>
@@ -21,5 +19,24 @@
     {% formfield group.diceroll_B label="Please enter the result (1 to 6) :" %}
     <p>{% next_button %}</p>
     {% include Constants.instructions_template %}
+
+{% endblock %}
+
+{% block content %}
+    <p>
+    役割Aの参加者は、出目が{{group.diceroll_A}}だったと報告しています。
+    下に表示されている画像が、あなたのダイスロール結果です。
+    </p>
+
+    <img src="{% static image_pathB %}" width="500"/>
+
+    <p>
+    出目はいくつでしたか？
+    </p>
+
+    {% formfield group.diceroll_B label="結果を入力してください (1から6までの半角数字) :" %}
+
+    <button class="otree-btn-next btn btn-primary">次へ</button>
+
 
 {% endblock %}

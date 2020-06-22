@@ -55,9 +55,57 @@ class Group(BaseGroup):
 #        p1.payoff = Constants.endowment - self.sent_amount + self.sent_back_amount
 #        p2.payoff = self.sent_amount * Constants.multiplier - self.sent_back_amount
 
-
 class Player(BasePlayer):
     def role(self):
         return {1: 'A', 2: 'B'}[self.id_in_group]
 
+    id = models.StringField(label="あなたのIDを入力してください (半角英数字) ")
 
+
+    q1 = models.StringField(
+    choices=[
+        [1, 'はい'],
+        [2, 'いいえ'],
+    ],
+    label="役割Aの人が先に、役割Bの人が後にサイコロを振る"
+)
+
+    q2 = models.StringField(
+    choices=[
+        [1, 'はい'],
+        [2, 'いいえ'],
+    ],
+    label="サイコロの出目は、振った本人にしか確認できない"
+)
+
+    q3 = models.StringField(
+    choices=[
+        [1, 'はい'],
+        [2, 'いいえ'],
+    ],
+    label="ゲームの途中で、AとBの役割は交代する"
+)
+    q4 = models.StringField(
+    choices=[
+        [1, '0円'],
+        [2, '100円'],
+        [3, '200円'],
+        [4, '300円'],
+        [5, '400円'],
+        [6, '500円'],
+        [7, '600円'],
+    ],
+    label="役割Aの人が5、役割Bの人が5を報告した回が報酬決定に使用された場合、報酬は次のうちどれになるか"
+)
+    q5 = models.StringField(
+    choices=[
+        [1, '0円'],
+        [2, '100円'],
+        [3, '200円'],
+        [4, '300円'],
+        [5, '400円'],
+        [6, '500円'],
+        [7, '600円'],
+    ],
+    label="役割Aの人が2、役割Bの人が5を報告した回が報酬決定に使用された場合、報酬は次のうちどれになるか"
+)

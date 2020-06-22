@@ -8,6 +8,22 @@ class Introduction(Page):
         return self.round_number == 1
 
 
+class Quiz(Page):
+    form_model = "player"
+    form_fields = ["q1", "q2","q3","q4","q5"]
+
+
+    def error_message(self, form_fields):
+        if all(form_fields) != True: 
+            return '全ての項目に回答してください'
+
+
+class Adiceroll(Page):
+     """This page is only for A
+    A reports the result of the dice roll to B """   
+    def is_displayed(self):
+        return self.player.id_in_group == 1
+
 
 
 class Report(Page):
@@ -31,6 +47,12 @@ class Report(Page):
 class ReportBackWaitPage(WaitPage):
     pass
 
+
+class Bdiceroll(Page):
+     """This page is only for B
+    B reports back the result of the dice roll to A """   
+    def is_displayed(self):
+        return self.player.id_in_group == 2
 
 class Reportback(Page):
     import numpy as np
@@ -71,8 +93,11 @@ class Results(Page):
 
 page_sequence = [
     Introduction,
+    Quiz,
+    Adiceroll,
     Report,
     ReportBackWaitPage,
+    Bdiceroll,
     Reportback,
     ResultsWaitPage,        
     Results
