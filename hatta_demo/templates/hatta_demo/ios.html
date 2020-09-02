@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    以下に示す7つの図形のうち、あなたとあなたのペア相手の関係をよく表しているものを1つ選んで、その数字を答えてください。
+{% endblock %}
+
+{% block content %}
+
+    <img src="{% static image_pathios %}"/ width="500">
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

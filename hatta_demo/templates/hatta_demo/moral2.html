@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    次の文を読んで、あなたがどの程度同意するかを以下の尺度で答えてください。
+
+{% endblock %}
+
+{% block content %}
+0.全く同意しない
+1.あまり同意しない
+2.どちらかといえば同意しない
+3.どちらかといえば同意する
+4.まあまあ同意する
+5.非常に同意する
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}
