@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+アンケート
+{% endblock %}
+
+{% block content %}
+<p><b>
+    1から10までのことばがあなた自身にどのくらい当てはまるかについて、下の枠内の1から7までの数字のうちもっとも適切なものを選んでください。<br>
+    文章全体を総合的に見て、自分にどれくらい当てはまるか評価してください。
+</b></p>
+
+1.全く違うと思う<br>
+2.おおよそ違うと思う<br>
+3.少し違うと思う<br>
+4.どちらでもない<br>
+5.少しそう思う<br>
+6.まあまあそう思う<br>
+7.強くそう思う<br>
+<br><br>
+    {% formfields %}
+
+    <button class="otree-btn-next btn btn-primary">次へ</button>
+
+{% endblock %}

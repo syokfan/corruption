@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+アンケート
+{% endblock %}
+
+{% block content %}
+
+<p>
+    あなたについて情報を入力してください。
+</p>
+
+    {% formfields %}
+
+<p><b>
+    お疲れさまでした。これでアンケートは終了です。
+</b></p>
+    <button class="otree-btn-next btn btn-primary">アンケートを終了する</button>
+
+{% endblock %}

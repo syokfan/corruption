@@ -9,19 +9,19 @@
             役割Aの参加者の出目は {{ group.diceroll_A }} でした。
             役割Bの参加者の出目は {{ group.diceroll_B }} でした。
         </p>
-        <p>
+        <p><b>
             同じ出目が報告されました。この回が選択された場合は、
             {{ group.diceroll_A }} × 100円がお二人それぞれに報酬として支払われます。
-        </p>
+        </b></p>
     {% else %}
         <p>
             役割Aの参加者の出目は {{ group.diceroll_A }} でした。
             役割Bの参加者の出目は {{ group.diceroll_B }} でした。
         </p>
-        <p>
+        <p><b>
             異なる出目が報告されました。この回が選択された場合は、
             追加報酬は支払われません。
-        </p>
+        </b></p>
         .
     {% endif %}
     <button class="otree-btn-next btn btn-primary">次へ</button>

@@ -40,11 +40,11 @@ class Subsession(BaseSubsession):
             self.group_like_round(1)
 
 class Group(BaseGroup):
-    diceroll_A = models.CurrencyField(
+    diceroll_A = models.IntegerField(
         min=1, max=6, doc="""Diceroll reported by A"""
     )
 
-    diceroll_B = models.CurrencyField(min=1, max=6, doc="""Diceroll reported by B""")
+    diceroll_B = models.IntegerField(min=1, max=6, doc="""Diceroll reported by B""")
 
 #    def sent_back_amount_max(self):
 #        return self.sent_amount * Constants.multiplier
@@ -59,10 +59,10 @@ class Player(BasePlayer):
     def role(self):
         return {1: 'A', 2: 'B'}[self.id_in_group]
 
-    id = models.StringField(label="あなたのIDを入力してください (半角英数字) ")
+    exp_id = models.StringField(label="あなたのIDを入力してください (半角英数字) ")
 
 
-    q1 = models.StringField(
+    q1 = models.IntegerField(
     choices=[
         [1, 'はい'],
         [2, 'いいえ'],
@@ -70,7 +70,7 @@ class Player(BasePlayer):
     label="役割Aの人が先に、役割Bの人が後にサイコロを振る"
 )
 
-    q2 = models.StringField(
+    q2 = models.IntegerField(
     choices=[
         [1, 'はい'],
         [2, 'いいえ'],
@@ -78,14 +78,14 @@ class Player(BasePlayer):
     label="サイコロの出目は、振った本人にしか確認できない"
 )
 
-    q3 = models.StringField(
+    q3 = models.IntegerField(
     choices=[
         [1, 'はい'],
         [2, 'いいえ'],
     ],
     label="ゲームの途中で、AとBの役割は交代する"
 )
-    q4 = models.StringField(
+    q4 = models.IntegerField(
     choices=[
         [1, '0円'],
         [2, '100円'],
@@ -97,7 +97,7 @@ class Player(BasePlayer):
     ],
     label="役割Aの人が5、役割Bの人が5を報告した回が報酬決定に使用された場合、報酬は次のうちどれになるか"
 )
-    q5 = models.StringField(
+    q5 = models.IntegerField(
     choices=[
         [1, '0円'],
         [2, '100円'],

@@ -19,10 +19,11 @@ class Quiz(Page):
 
 
 class Adiceroll(Page):
-     """This page is only for A
-    A reports the result of the dice roll to B """   
     def is_displayed(self):
         return self.player.id_in_group == 1
+
+    def vars_for_template(self):
+        return dict(diceroll_path = 'diceroll.jpg')
 
 
 
@@ -37,7 +38,7 @@ class Report(Page):
     
     def vars_for_template(self):
         return dict(
-        image_pathA='{}.jpeg'.format(np.random.randint(1,6)),
+        image_pathA='{}.jpg'.format(np.random.randint(1,6)),
         )
     multiplier = 3
 
@@ -48,11 +49,12 @@ class ReportBackWaitPage(WaitPage):
     pass
 
 
-class Bdiceroll(Page):
-     """This page is only for B
-    B reports back the result of the dice roll to A """   
+class Bdiceroll(Page): 
     def is_displayed(self):
         return self.player.id_in_group == 2
+
+    def vars_for_template(self):
+        return dict(diceroll_path = 'diceroll.jpg')
 
 class Reportback(Page):
     import numpy as np
@@ -64,7 +66,7 @@ class Reportback(Page):
 
     def vars_for_template(self):
         return dict(
-        image_pathB='{}.jpeg'.format(np.random.randint(1,6)),
+        image_pathB='{}.jpg'.format(np.random.randint(1,6)),
         )
 
     def is_displayed(self):

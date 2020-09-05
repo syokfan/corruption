@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+アンケート
+{% endblock %}
+
+{% block content %}
+
+<p><b>
+    以下に示す7つの図形のうち、あなたとあなたのペア相手の関係をよく表しているものを1つ選んで、その数字を答えてください。
+</b></p>
+<br>
+
+    <img src="{% static image_pathios %}"/ width="700">
+
+    {% formfields %}
+
+    <button class="otree-btn-next btn btn-primary">次へ</button>
+
+{% endblock %}

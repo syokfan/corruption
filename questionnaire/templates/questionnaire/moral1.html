@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+アンケート
+{% endblock %}
+
+{% block content %}
+<p><b>
+    ある人の行為が倫理的に正しいか間違っているかを判断するときに、次のような判断材料はあなたの考えにどの程度関係しますか。<br>
+    以下の尺度を用いて評価してください。
+</b></p>
+
+0.全く関係がない<br>
+1.あまり関係がない<br>
+2.わずかに関係がある<br>
+3.やや関係がある<br>
+4.とても関係がある<br>
+5.きわめて関係がある (正しいか間違っているかの判断に最も重要である)
+<br><br>
+
+    {% formfields %}
+
+    <button class="otree-btn-next btn btn-primary">次へ</button>
+
+{% endblock %}

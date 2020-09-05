@@ -4,37 +4,18 @@
 
 
 {% block content %}
-<p>
-    You are Participant B.
-    Participant A reported that the result was {{group.diceroll_A}}.
-    Now your diceroll is below.
-</p>
-
-<img src="{% static image_pathB %}" width="500"/>
-
-<p>
-    What was the result of the dice roll? (A will know your report)
-</p>
-
-    {% formfield group.diceroll_B label="Please enter the result (1 to 6) :" %}
-    <p>{% next_button %}</p>
-    {% include Constants.instructions_template %}
-
-{% endblock %}
-
-{% block content %}
     <p>
-    役割Aの参加者は、出目が{{group.diceroll_A}}だったと報告しています。
+    役割Aの参加者は、出目が{{group.diceroll_A}}だったと報告していました。<br>
     下に表示されている画像が、あなたのダイスロール結果です。
     </p>
 
-    <img src="{% static image_pathB %}" width="500"/>
+    <img src="{% static image_pathB %}" width="300"/>
 
     <p>
     出目はいくつでしたか？
     </p>
 
-    {% formfield group.diceroll_B label="結果を入力してください (1から6までの半角数字) :" %}
+    {% formfield group.diceroll_B label="結果を報告してください (1から6までの半角数字) :" %}
 
     <button class="otree-btn-next btn btn-primary">次へ</button>
 

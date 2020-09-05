@@ -1,5 +1,27 @@
 from os import environ
 
+
+SESSION_CONFIGS = [
+    dict(
+        name='corurption',
+        display_name="課題2",
+        num_demo_participants=2,
+        app_sequence=['corruption'],
+    ),
+    dict(
+        name='questionnaire',
+        display_name='課題3_fr',
+        num_demo_participants=1,
+        app_sequence=['questionnaire'],
+    ),
+    dict(
+        name='questionnaire_v',
+        display_name='課題3_ot',
+        num_demo_participants=1,
+        app_sequence=['questionnaire_v'],
+    ),
+]
+
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
 # the session config can be accessed from methods in your apps as self.session.config,
@@ -8,33 +30,6 @@ from os import environ
 SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
-
-
-SESSION_CONFIGS = [
-    dict(
-        name='public_goods',
-        display_name="Public Goods",
-        num_demo_participants=3,
-        app_sequence=['public_goods', 'payment_info'],
-    ),
-    dict(
-        name='guess_two_thirds',
-        display_name="Guess 2/3 of the Average",
-        num_demo_participants=3,
-        app_sequence=['guess_two_thirds', 'payment_info'],
-    ),
-    dict(
-        name='survey',
-        display_name='survey',
-        num_demo_participants=1,
-        app_sequence=['survey', 'payment_info'],
-    ),
-    dict(
-        name='corruption',
-        num_demo_participants=2,
-        app_sequence=['corruption'],       
-    ),
-]
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
@@ -62,7 +57,7 @@ Here are some oTree games.
 """
 
 # don't share this with anybody.
-SECRET_KEY = 'x)^+fw$3z37blkd$j8^vcw-t38-iljb%=(wdjc-2!+rojnmeez'
+SECRET_KEY = '=9uinn*yn_w+-_qg5n^$ds$7=i^396u3bl6stzrqqy!mv275n%'
 
 INSTALLED_APPS = ['otree']
 

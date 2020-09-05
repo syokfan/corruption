@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+アンケート
+{% endblock %}
+
+{% block content %}
+<p><b>
+    行っていただく課題について、次の設問に答えてください。<br>    
+    ただし、最後の問題には正しい答えではなく、600円と回答してください。
+</b></p>
+
+
+    {% formfields %}
+
+    <button class="otree-btn-next btn btn-primary">回答を終了し、課題を開始する</button>
+
+    {% include Constants.instructions_template %}
+
+
+
+{% endblock %}

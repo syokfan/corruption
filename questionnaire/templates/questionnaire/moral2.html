@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+アンケート
+{% endblock %}
+
+{% block content %}
+
+<p><b>
+    次の文を読んで、あなたがどの程度同意するかを以下の尺度で答えてください。
+</b></p>
+
+0.全く同意しない<br>
+1.あまり同意しない<br>
+2.どちらかといえば同意しない<br>
+3.どちらかといえば同意する<br>
+4.まあまあ同意する<br>
+5.非常に同意する<br>
+<br><br>
+    {% formfields %}
+
+    <button class="otree-btn-next btn btn-primary">次へ</button>
+
+{% endblock %}

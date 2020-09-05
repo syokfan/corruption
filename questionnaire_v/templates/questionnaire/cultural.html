@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+アンケート
+{% endblock %}
+
+{% block content %}
+<p><b>
+    このアンケートでは、様々な状況におけるあなたの気持ちや行動について質問します。<br>
+    以下の文章をよく読んで、それぞれどの程度あなたにあてはまるかを考え、その程度に応じて1から7までの番号から1つを選んで回答してください。
+
+</b></p>   
+
+1:全くあてはまらない<br>
+2:あてはまらない<br>
+3:ややあてはまらない<br>
+4:どちらともいえない<br>
+5:ややあてはまる<br>
+6:あてはまる<br>
+7:非常によくあてはまる
+<br><br>
+
+    {% formfields %}
+
+    <button class="otree-btn-next btn btn-primary">次へ</button>
+
+{% endblock %}
