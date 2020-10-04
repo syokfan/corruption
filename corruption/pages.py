@@ -9,6 +9,9 @@ class Introduction(Page):
 
 
 class Quiz(Page):
+    def is_displayed(self):
+        return self.round_number == 1
+    
     form_model = "player"
     form_fields = ["q1", "q2","q3","q4","q5"]
 

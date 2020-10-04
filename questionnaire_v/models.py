@@ -18,7 +18,7 @@ Your app description
 
 
 class Constants(BaseConstants):
-    name_in_url = 'questionnaire_ot'
+    name_in_url = 'questionnaire_fr'
     players_per_group = None
     num_rounds = 1
 

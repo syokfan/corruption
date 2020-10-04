@@ -101,6 +101,6 @@ page_sequence = [
     moral2,
     cultural,
 #    friendship,
-    ios,
+#    ios,
     MyPage,
 ]
